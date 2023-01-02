@@ -73,3 +73,5 @@ qq VARCHAR(20))""")
 db.close()
 ```
 将`info.json`文件中的contributor修改为空字典，重启HoshinoBot并成功运行后删去上述代码即可。
+
+举办卡号主要针对失效的图片以及不健康图片。
