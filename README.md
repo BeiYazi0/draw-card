@@ -63,16 +63,16 @@
 ## 效果
 
 抽卡
-![image](https://github.com/BeiYazi0/draw-card/blob/main/images/test/card_choice.png)
+![image](https://github.com/BeiYazi0/draw-card/blob/main/test/card_choice.png)
 
 洗入
-![image](https://github.com/BeiYazi0/draw-card/blob/main/images/test/card_update.png)
+![image](https://github.com/BeiYazi0/draw-card/blob/main/test/card_update.png)
 
 查看卡号
-![image](https://github.com/BeiYazi0/draw-card/blob/main/images/test/card_check.png)
+![image](https://github.com/BeiYazi0/draw-card/blob/main/test/card_check.png)
 
 收到举办信息
-![image](https://github.com/BeiYazi0/draw-card/blob/main/images/test/card_against.png)
+![image](https://github.com/BeiYazi0/draw-card/blob/main/test/card_against.png)
 
 ## 备注
 
