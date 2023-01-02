@@ -60,6 +60,19 @@
 
 若加上 群号/qq号 则查询其是否在  黑名单/白名单 中，否则查询 黑名单/白名单 模式开启情况
 
+## 效果
+
+抽卡
+![image](https://github.com/BeiYazi0/draw-card/blob/main/images/test/card_choice.png)
+
+洗入
+![image](https://github.com/BeiYazi0/draw-card/blob/main/images/test/card_update.png)
+
+查看卡号
+![image](https://github.com/BeiYazi0/draw-card/blob/main/images/test/card_check.png)
+
+收到举办信息
+![image](https://github.com/BeiYazi0/draw-card/blob/main/images/test/card_against.png)
 
 ## 备注
 
