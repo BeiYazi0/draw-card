@@ -35,7 +35,7 @@ async def card_choice(bot, ev: CQEvent):
     msg = await bot.send(ev, card, at_sender = True)
     if withdraw > 0:
         await asyncio.sleep(withdraw)
-    await bot.delete_msg(message_id=msg['message_id'])
+        await bot.delete_msg(message_id=msg['message_id'])
 
 
 @sv.on_keyword('洗入')
