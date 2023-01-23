@@ -76,6 +76,8 @@
 
 ## 备注
 
+2023-1-23 感谢@XiaoFuOS(https://github.com/XiaoFuOS)提供的代码，增加了撤回的功能，withdraw为撤回时间，若为0则不撤回。
+
 cards.db是准备好的数据库，如果不需要，可以直接删除，并在首次启用前在`draw_card.py`文件第9行添加以下代码。
 ```powershell
 db = sqlite3.connect(conn)
