@@ -2,7 +2,7 @@ import hoshino
 from hoshino import Service
 from hoshino.typing import CQEvent
 from hoshino.util import DailyNumberLimiter
-
+import asyncio
 from .draw_card import*
 from .info_rw import*
 
@@ -21,6 +21,7 @@ b_model = info["black"]
 white_groups = set(info["white_groups"])
 black_qq = set(info["black_qq"])
 contributor = info["contributor"]
+withdraw = 30 # 撤回时间
 
 
 max_notice = 3
@@ -31,7 +32,9 @@ refuse_notice = f'您今天已经举报过{max_notice}次了，请明天再来�
 @sv.on_fullmatch('抽卡')
 async def card_choice(bot, ev: CQEvent):
     card = get_card("-1")
-    await bot.send(ev, card, at_sender = True)
+    msg = await bot.send(ev, card, at_sender = True)
+    await asyncio.sleep(withdraw)
+    await bot.delete_msg(message_id=msg['message_id'])
 
 
 @sv.on_keyword('洗入')
