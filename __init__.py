@@ -33,7 +33,8 @@ refuse_notice = f'您今天已经举报过{max_notice}次了，请明天再来�
 async def card_choice(bot, ev: CQEvent):
     card = get_card("-1")
     msg = await bot.send(ev, card, at_sender = True)
-    await asyncio.sleep(withdraw)
+    if withdraw > 0:
+        await asyncio.sleep(withdraw)
     await bot.delete_msg(message_id=msg['message_id'])
 
 
