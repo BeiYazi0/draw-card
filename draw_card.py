@@ -25,12 +25,12 @@ def get_card(idx: str):
         xka.close()
         if result == None:
             db.close()
-            return None
+            return None,idx
         url = result[1]
         qq = result[2]
         content = f"卡号：{idx}\n上传者:{qq} [CQ:image,file={url}]"
     db.close()
-    return content 
+    return content,idx
 
 
 def card_increase(imgs: str, qq: str):
