@@ -2,6 +2,7 @@ import hoshino
 from hoshino import Service
 from hoshino.typing import CQEvent
 from hoshino.util import DailyNumberLimiter
+from nonebot.exceptions import CQHttpError
 import asyncio
 from .draw_card import*
 from .info_rw import*
@@ -31,11 +32,14 @@ refuse_notice = f'您今天已经举报过{max_notice}次了，请明天再来�
 
 @sv.on_fullmatch('抽卡')
 async def card_choice(bot, ev: CQEvent):
-    card = get_card("-1")
-    msg = await bot.send(ev, card, at_sender = True)
-    if withdraw > 0:
-        await asyncio.sleep(withdraw)
-        await bot.delete_msg(message_id=msg['message_id'])
+    card,index = get_card("-1")
+    try:
+        msg = await bot.send(ev, card, at_sender = True)
+        if withdraw > 0:
+            await asyncio.sleep(withdraw)
+            await bot.delete_msg(message_id=msg['message_id'])
+    except CQHttpError:
+        await bot.send(ev, f"糟糕，卡号为【{index}】的图片发不出去力...快向维护组举办吧～")
 
 
 @sv.on_keyword('洗入')
@@ -77,7 +81,7 @@ async def card_against(bot, ev: CQEvent):
         await bot.send(ev, "你的卡号呢？", at_sender=True)
     else:
         lmt.increase(uid)
-        card = get_card(idx)
+        card,index = get_card(idx)
         if card == None:
             await bot.send(ev, "错误的卡号", at_sender=True)
             return
@@ -129,11 +133,17 @@ async def card_check(bot, ev: CQEvent):
     if not idx:
         await bot.send(ev, "你的卡号呢？", at_sender=True)
         return
-    card = get_card(idx)
+    card,index = get_card(idx)
     if card == None:
         await bot.send(ev, "错误的卡号", at_sender=True)
     else:
-        await bot.send(ev, card)
+        try:
+            msg = await bot.send(ev, card)
+            if withdraw > 0:
+                await asyncio.sleep(withdraw)
+                await bot.delete_msg(message_id=msg['message_id'])
+        except CQHttpError:
+            await bot.send(ev, f"糟糕，卡号为【{index}】的图片发不出去力...")
 
 
 @sv.on_fullmatch('查看卡池贡献者')
