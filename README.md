@@ -76,8 +76,6 @@
 
 ## 备注
 
-2023-1-23 感谢[@XiaoFuOS](https://github.com/XiaoFuOS)提供的代码，增加了撤回的功能，withdraw为撤回时间，若为0则不撤回。
-
 cards.db是准备好的数据库，如果不需要，可以直接删除，并在首次启用前在`draw_card.py`文件第9行添加以下代码。
 ```powershell
 db = sqlite3.connect(conn)
@@ -90,3 +88,9 @@ db.close()
 将`info.json`文件中的contributor修改为空字典，重启HoshinoBot并成功运行后删去上述代码即可。
 
 举办卡号主要针对失效的图片以及不健康图片。
+
+## 更新信息
+
+2023-2-8 感谢[@XiaoFuOS](https://github.com/XiaoFuOS)提供的代码，对于失效的图片，对用户发送提示及卡号。
+
+2023-1-23 感谢[@XiaoFuOS](https://github.com/XiaoFuOS)提供的代码，增加了撤回的功能，withdraw为撤回时间，若为0则不撤回。
