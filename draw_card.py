@@ -70,3 +70,12 @@ def qq_decrease(qq: str):
     db.execute(sql)
     db.commit()
     db.close()
+
+
+def total():
+    db = sqlite3.connect(conn)
+    c = db.execute("SELECT COUNT(idx) FROM cardinfo")
+    stock = c.fetchall()
+    c.close()
+    db.close()
+    return stock[0][0]
