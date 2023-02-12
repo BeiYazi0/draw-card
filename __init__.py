@@ -263,3 +263,9 @@ async def card_set(bot, ev: CQEvent):
     else:
         return
     await bot.send(ev, statu)
+
+
+@sv.on_fullmatch('查库存')
+async def info(bot, ev: CQEvent):
+    stock = total()
+    await bot.send(ev, f"当前图库总库存为 {stock} 张~")
