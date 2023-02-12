@@ -95,7 +95,7 @@ db.close()
 
 ## 更新信息
 
-2023-2-8 感谢[@XiaoFuOS](https://github.com/XiaoFuOS)提供的代码，添加【查库存】指令，查看卡片的总数。
+2023-2-12 感谢[@XiaoFuOS](https://github.com/XiaoFuOS)提供的代码，添加【查库存】指令，查看卡片的总数。
 
 2023-2-8 感谢[@XiaoFuOS](https://github.com/XiaoFuOS)提供的代码，对于失效的图片，对用户发送提示及卡号。
 
